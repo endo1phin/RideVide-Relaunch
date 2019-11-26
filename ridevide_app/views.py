@@ -173,9 +173,11 @@ def add_to_campus(request):
         form = forms.AddToCampusRideForm()
         return render(request, "ridevide_app/add_rides.html", dict(form=form, heading="Add Ride to Campus"))
 
+
 # @login_required(login_url='/')
 def contact(request):
     return render(request, "ridevide_app/contact.html")
+
 
 def stats(request):
     total_rides = Ride.objects.all()
