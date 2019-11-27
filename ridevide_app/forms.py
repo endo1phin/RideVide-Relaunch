@@ -17,9 +17,8 @@ ALL_LOCATION_CHOICES = [('All', 'All')] + CAMPUS_LOCATION_CHOICES + OFF_CAMPUS_L
 class AddRideForm(forms.Form):
     date = forms.DateField(
         widget=DateTimePicker(options={"format": "YYYY-MM-DD",
-                                       "pickTime": False,}))
-    time = forms.TimeField(
-        input_formats=TIME_INPUT_FORMATS)
+                                       "pickTime": False}))
+    time = forms.TimeField(input_formats="%H:%M")
 
 
 class AddFromCampusRideForm(AddRideForm):

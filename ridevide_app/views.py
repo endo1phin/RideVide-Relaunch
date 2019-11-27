@@ -4,6 +4,7 @@ from ridevide_app import forms
 from ridevide_app.models import Ride, UserProfile
 import datetime
 import itertools
+import sys
 
 ### Helper Methods
 
@@ -121,6 +122,7 @@ def add(request):
 def add_from_campus(request):
     if request.method == 'POST':
         form = forms.AddFromCampusRideForm(request.POST)
+        
         if form.is_valid():
             date = form.cleaned_data['date']
             time = form.cleaned_data['time']
